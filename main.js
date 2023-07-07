@@ -5,7 +5,7 @@ var div = Widget.div("container", { parent: root });
 div.append(Widget.input("todoInput")); //div가 위, todoInput이 아래.
 div.append(Widget.button("btnSave", { label: "입력", onClick: onClickSave }));
 
-var todorender = div.append(
+div.append(
   Widget.list("todoList", {
     datas: getSortedTodoList({ done: false }),
     columns: [
@@ -15,7 +15,7 @@ var todorender = div.append(
     ],
   })
 );
-var donerender = div.append(
+div.append(
   Widget.list("doneList", {
     datas: getSortedTodoList({ done: true }),
     columns: [
@@ -28,6 +28,7 @@ var donerender = div.append(
 /////////////////////////////////////////////////////////////
 function onClickSave() {
   var contentsEl = document.getElementById("todoInput");
+  //이부분을 getvalue로 바꿔보기
   if (!contentsEl.value) {
     alert("할일을 입력해 주세요.");
     return;

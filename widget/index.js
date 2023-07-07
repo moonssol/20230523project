@@ -9,6 +9,7 @@ import { createButton } from "./button";
 import { createList } from "./list";
 import { createDiv } from "./div";
 import { createInput } from "./input";
+import { addControl, getControl } from "./core";
 
 window.Widget = {
   //내가 오픈하고 싶은 것을 할당.
@@ -16,4 +17,6 @@ window.Widget = {
   list: createList,
   div: createDiv,
   input: createInput,
+  getControl: getControl,
+  addControl: addControl,
 };
